@@ -4,9 +4,7 @@ import './App.css';
 
 // 手動設定商品
 const PRODUCTS = [
-  { id: 1, name: '3年陳年老烏龍', price: 1200, desc: '炭火烘焙，回甘強烈' },
-  { id: 2, name: '5年特級鐵觀音', price: 1800, desc: '韻味深長，行家首選' },
-  { id: 3, name: '2年老青茶', price: 900, desc: '清香中帶有歲月沈澱' },
+    { id: 1, name: '陳年老烏龍', price: 1200, picture:'/images/S__134553607.jpg', producing:'杉林溪', desc: '炭火烘培出的手工功夫老茶，回甘強烈茶香濃郁' },
 ];
 
 function App() {
@@ -83,7 +81,9 @@ function App() {
           {PRODUCTS.map((product) => (
             <div key={product.id} style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
               <h3>{product.name}</h3>
+                  <img src={product.picture} alt={product.name} style={{ width: '100%', height: 'auto', marginBottom: '10px' }} />
               <p style={{ color: '#888' }}>{product.desc}</p>
+              <p style={{ color: '#888' }}>產地: {product.producing}</p>
               <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>NT$ {product.price}</p>
               <button 
                 onClick={() => addToCart(product)}
