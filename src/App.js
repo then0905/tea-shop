@@ -81,7 +81,7 @@ function App() {
           {PRODUCTS.map((product) => (
             <div key={product.id} style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
               <h3>{product.name}</h3>
-                  <img src={product.picture} alt={product.name} style={{ width: '100%', height: 'auto', marginBottom: '10px' }} />
+                  <img src={process.env.PUBLIC_URL + product.picture} alt={product.name} style={{ width: '100%', height: 'auto', marginBottom: '10px' }} />
               <p style={{ color: '#888' }}>{product.desc}</p>
               <p style={{ color: '#888' }}>產地: {product.producing}</p>
               <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>NT$ {product.price}</p>
